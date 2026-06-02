@@ -1,0 +1,17 @@
+COMANDOS PRINCIPAIS
+
+Rodar com Docker:
+docker compose up -d --build
+
+Swagger:
+http://localhost:8080/swagger
+
+Rodar local:
+cd src/AgroOrbit.Api
+dotnet restore
+dotnet run
+
+Migrations:
+dotnet tool install --global dotnet-ef
+dotnet ef migrations add InitialCreate
+dotnet ef database update

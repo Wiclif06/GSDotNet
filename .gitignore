@@ -1,0 +1,16 @@
+bin/
+obj/
+.vs/
+.idea/
+*.user
+*.suo
+*.log
+
+.vscode/
+*.db
+*.sqlite
+
+DockerDesktop/
+data/
+
+appsettings.Development.json

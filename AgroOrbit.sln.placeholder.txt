@@ -1,0 +1,1 @@
+Opcional: crie uma solution com `dotnet new sln -n AgroOrbit` e adicione o projeto com `dotnet sln add src/AgroOrbit.Api/AgroOrbit.Api.csproj`.

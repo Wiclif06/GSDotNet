@@ -1,0 +1,44 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: agroorbit-dotnet-db
+    restart: always
+    environment:
+      POSTGRES_DB: agroorbit
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - agroorbit_dotnet_data:/var/lib/postgresql/data
+    networks:
+      - agroorbit_dotnet_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d agroorbit"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ./src/AgroOrbit.Api
+      dockerfile: Dockerfile
+    container_name: agroorbit-dotnet-api
+    restart: always
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DATABASE_URL: Host=postgres;Port=5432;Database=agroorbit;Username=postgres;Password=postgres
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - agroorbit_dotnet_network
+
+volumes:
+  agroorbit_dotnet_data:
+
+networks:
+  agroorbit_dotnet_network:
+    driver: bridge

@@ -6,6 +6,15 @@ A **AgroOrbit** é uma API REST desenvolvida em **ASP.NET Core 8** para apoiar o
 
 Ela representa a entrega da disciplina **Advanced Business Development with .NET** da Global Solution 2026/1.
 
+## Integrantes
+
+| Nome | RM |
+|------|------|
+| Lucas Gonçalves Viana | 563254 |
+| Deryk de Souza Queiroz | 563412 |
+| Vinicius Paschoeto da Silva | 563089 |
+| Felipe Wiclif Leal da Silva | 563901 |
+
 ## Ideia da solução
 
 A solução permite que produtores, cooperativas ou técnicos agrícolas acompanhem fazendas e talhões, registrem sensores, leituras de campo e dados orbitais como NDVI, temperatura de superfície, cobertura de nuvens e focos de calor.

@@ -178,3 +178,9 @@ O diferencial do projeto é conectar o agronegócio com a Economia Espacial, usa
 ```text
 https://github.com/Wiclif06/GSDotNet.git
 ```
+
+## VÍDEO EXPLICATIVO
+
+```text
+https://youtu.be/FWWlkPz9BtA
+```

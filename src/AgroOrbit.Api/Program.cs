@@ -3,6 +3,7 @@ using AgroOrbit.Api.Middlewares;
 using AgroOrbit.Api.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,14 @@ builder.Services.AddDbContext<AgroOrbitDbContext>(options =>
     options.UseNpgsql(connectionString));
 
 builder.Services.AddScoped<RiskAnalysisService>();
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        // Evita erro 500 por referência circular entre entidades do Entity Framework
+        // Exemplo: User -> Farms -> User ou Farm -> CropAreas -> Farm.
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        options.JsonSerializerOptions.WriteIndented = true;
+    });
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>

@@ -131,6 +131,7 @@ dotnet ef database update
 | POST | /api/users | Criar usuário |
 | GET | /api/farms | Listar fazendas |
 | POST | /api/farms | Criar fazenda |
+| DELETE | /api/farms | Deletar fazenda |
 | GET | /api/crop-areas | Listar talhões |
 | POST | /api/crop-areas | Criar talhão |
 | GET | /api/sensors | Listar sensores |
@@ -161,17 +162,6 @@ NDVI baixo + temperatura alta = risco de seca
 Foco de calor + temperatura alta = risco crítico
 Cobertura de nuvens alta = baixa confiabilidade
 ```
-
-## Como explicar na apresentação
-
-A AgroOrbit em .NET é uma API administrativa que centraliza os dados agrícolas da solução. Ela permite cadastrar fazendas, talhões e sensores, registrar dados de satélite e gerar alertas automáticos para apoiar o produtor rural.
-
-A API utiliza Entity Framework Core com PostgreSQL, possui relacionamentos 1:N, validações, DTOs, Swagger e arquitetura organizada em camadas.
-
-## Diferencial
-
-O diferencial do projeto é conectar o agronegócio com a Economia Espacial, usando dados orbitais como NDVI e focos de calor para gerar decisões práticas no campo.
-
 
 ## GITHUB
 
